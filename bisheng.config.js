@@ -1,6 +1,6 @@
 module.exports = {
   port: 8686,
-  source: './src/posts',
+  source: './posts',
   theme: 'bisheng-theme-one',
   themeConfig: {
     home: '/',
@@ -14,7 +14,6 @@ module.exports = {
     // hideBisheng: true,
     github: 'https://github.com/benjycui/bisheng'
   },
-  output: './',
-  entryName: 'index',
+  output: './_site',
   root: '/'
 };

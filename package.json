@@ -1,0 +1,17 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "my blog, to show some demo from my work, and select some note from my reading",
+  "main": "index.html",
+  "repository": "https://github.com/jemmyzheng/jemmyzheng.github.io.git",
+  "author": "jemmyZheng",
+  "license": "MIT",
+  "scripts": {
+    "start": "bisheng start",
+    "build": "bisheng build"
+  },
+  "dependencies": {
+    "bisheng": "^0.23.3",
+    "bisheng-theme-one": "^0.2.15"
+  }
+}

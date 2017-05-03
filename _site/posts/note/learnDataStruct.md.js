@@ -1,1 +1,0 @@
-webpackJsonp([0,2],{253:function(t,a){t.exports={content:["article",["p","#Learn Data Structure"]],meta:{title:"Learn Data Structure!",publishDate:"2016-05-05T00:00:00.000Z",tags:["\u6570\u636e\u7ed3\u6784"],filename:"posts/note/learnDataStruct.md"}}}});

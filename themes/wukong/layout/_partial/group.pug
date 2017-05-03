@@ -1,0 +1,3 @@
+if group === 'index'
+  each post in page.posts.data
+    | !{partial('article', {post: post, excerpt: true})}

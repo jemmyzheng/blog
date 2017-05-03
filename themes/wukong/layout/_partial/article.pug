@@ -1,0 +1,19 @@
+-
+  var attr = { };
+  attr.id = post.layout + '-' + post.slug;
+  attr['class'] = 'article-type-' + post.layout;
+  attr.itemscope = true;
+  attr.itemprop = 'blogPost';
+article&attributes(attr)
+  div.article-meta
+  div.article-inner
+    div.article-header
+    div(itemprop='articleBody').article-entry
+      if post.excerpt && excerpt
+        h1 #{post.title}
+        p !{post.excerpt}
+        p.article-more-link
+          a(href=url_for(post.path)+'#more') #{theme.excerpt_link || 'Read more'}
+      else
+        | !{post.content}
+    div.article-footer

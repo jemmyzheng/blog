@@ -7,18 +7,15 @@ head
   name='viewport'
   content='width=device-width, initial-scale=1, maximum-scale=1'
   )
+  meta(name="author", content= config.author)
+  meta(name="renderer", content="webkit")
   -
     var title = page.title;
-    if (is_archive()){
-      title = __('archive_a');
-      if (is_month()){
-        title += ': ' + page.year + '/' + page.month;
-      } else if (is_year()){
-        title += ': ' + page.year;
-      }
-    } else if (is_category()){
-      title = __('category') + ': ' + page.category;
-    } else if (is_tag()){
-      title = __('tag') + ': ' + page.tag;
-    }
+    title = is_archive() && __('archive_a');
+    if (is_month()) { title +=  ': ' + page.year + '/' + page.month;}
+    if (is_year()) { title += ': ' + page.year; }
+    if (is_category()) { title = __('category') + ': ' + page.category; }
+    if (is_tag()) { title= __('tag') + ': ' + page.tag; }
   title #{title || config.title}
+  | !{css('style/index')}
+  link(rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml")

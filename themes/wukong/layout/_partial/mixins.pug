@@ -1,0 +1,58 @@
+mixin createMenu(options)
+  ul
+    each val, key in options
+      li: a(
+      href=val
+      class={active: m_active(val, true)}
+      ) #{__(key)}
+
+mixin icon(name)
+  span(class=`icon-${name}`)
+    svg(
+    class='icon'
+    aria-hidden='true'
+    )
+      use(xlink:href=`#icon-${name}`)
+
+mixin postTitle(className)
+  if post.link
+    h1(itemprop='name')
+      a(class=className, href=url_for(post.link), target='_blank' itemprop="url") #{post.title}
+  else if post.title && excerpt
+    h1(itemprop='name')
+      a(class=className, href=url_for(post.path)) #{post.title}
+  else
+    h1(itemprop='name') #{post.title}
+
+mixin postDate(className, format)
+  a(href=url_for(post.path), class=className)
+    time(datetime=date_xml(post.date), itemprop='datePublished') #{date(post.date, format)}
+
+mixin categories()
+  if post.categories && post.categories.length
+    div.archive-category
+      ul.archive-category-list
+        each category in post.categories.data
+          li=__(category.name)
+
+mixin tags()
+  if post.tags && post.tags.length
+    div.archive-tag
+      ul.archive-tag-list
+        each tag in post.tags.data
+          li: a(href=url_for(tag.path)) #{'#'+tag.name}
+mixin listArchives()
+  div.archives
+    if page.month && page.year
+      div.archive-list-info
+        h3 #{_p('archive_b', `${page.year}年${page.month}月`)}
+      if page.posts.length
+        ul.archive-list-month
+          each post in page.posts.data
+            li
+              a.title(href=url_for(post.path)) #{post.title}
+      else
+        p 'Ops Nothing....'
+      div.archive-btn-group: a(href=url_for(theme.menu.archives)) #{__('back')}
+    else
+      | !{list_archives()}

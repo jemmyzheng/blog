@@ -2,8 +2,9 @@
    Created by zhengwei on 2017/5/2.
 
 doctype html
-html
-  include _partial/head
+html(lang='zh-CN')
+  include _partial/head.pug
   body
+    include _partial/header.pug
     main !{body}
-  include _partial/footer
+  include _partial/footer.pug

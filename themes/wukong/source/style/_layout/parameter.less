@@ -1,0 +1,140 @@
+//== 色系
+//
+// code
+@base00 : #263238;
+@base01 : #2C393F;
+@base02 : #37474F;
+@base03 : #707880;
+@base04 : #C9CCD3;
+@base05 : #CDD3DE;
+@base06 : #D5DBE5;
+@base07 : #FFFFFF;
+@base08 : #EC5F67;
+@base09 : #EA9560;
+@base0A : #FFCC00;
+@base0B : #8BD649;
+@base0C : #80CBC4;
+@base0D : #89DDFF;
+@base0E : #82AAFF;
+@base0F : #EC5F67;
+
+// Website
+@clothes: #fecc4f; // 衣服和帽子
+@leg: #ca262b; // 腿
+@shoe_sleeve: #000000; // 鞋子和袖子
+@skin: #b95032; // 皮肤（手和内耳）
+@scarf: #79bece; // 围巾
+@handband: #b9c9a4; // 头箍
+@faceHair: #720d1d; // 脸部毛发（头发，耳朵）
+@face: #FFF; // 脸
+@eyebrow: #4ba147; // 眉毛
+@eyeShadow: #ef3f30; // 眼影
+@eyeSocket: #f1f22a; // 眼圈
+@eye: #230606; // 眼珠
+@belt: #b3bcbe; // 腰带
+@skirt: #f25a55; // 裙子
+@stroke: #5e0000; // 描边
+// 金箍棒
+@end: #ffe904;
+@main: #f22029;
+
+//== Text Typography
+//
+
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+@font-icon-path: "fonts/iconfont";
+
+@font-size-base:          14px;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:            @font-size-base;
+@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+
+
+@line-height-base:        1.428571429; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+
+//** By default, this inherits from the `<body>`.
+@headings-font-family:    inherit;
+@headings-font-weight:    500;
+@headings-line-height:    1.1;
+@headings-color:          inherit;
+@headings-small-color:    @belt;
+
+// code
+@article-padding: 0px;
+
+@article-width: 800px;
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `@screen-xs` as of v3.0.1
+@screen-xs:                  480px;
+//** Deprecated `@screen-xs-min` as of v3.2.0
+@screen-xs-min:              @screen-xs;
+//** Deprecated `@screen-phone` as of v3.0.1
+@screen-phone:               @screen-xs-min;
+
+// Small screen / tablet
+//** Deprecated `@screen-sm` as of v3.0.1
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+//** Deprecated `@screen-tablet` as of v3.0.1
+@screen-tablet:              @screen-sm-min;
+
+// Medium screen / desktop
+//** Deprecated `@screen-md` as of v3.0.1
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+//** Deprecated `@screen-desktop` as of v3.0.1
+@screen-desktop:             @screen-md-min;
+
+// Large screen / wide desktop
+//** Deprecated `@screen-lg` as of v3.0.1
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+//** Deprecated `@screen-lg-desktop` as of v3.0.1
+@screen-lg-desktop:          @screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+
+//== mixins
+
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}

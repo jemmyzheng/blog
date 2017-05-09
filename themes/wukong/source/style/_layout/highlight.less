@@ -1,0 +1,175 @@
+@import "parameter";
+.code-block() {
+  background: @base00;
+  margin: 0 @article-padding * -1;
+  padding: 15px @article-padding;
+  border-style: solid;
+  border-color: @base03;
+  border-width: 1px 0;
+  overflow: auto;
+  color: @base04;
+  line-height: @line-height-computed;
+}
+
+.line-number() {
+  color: @base03;
+  font-size: 0.85em;
+}
+.pre() {
+  .comment,
+  .title {
+    color: @base03;
+  }
+  .variable,
+  .attribute,
+  .tag,
+  .regexp,
+  &.ruby .constant,
+  &.xml .tag .title,
+  &.xml .pi,
+  &.xml .doctype,
+  &.html .doctype,
+  &.css .id,
+  &.css .class,
+  &.css .pseudo{
+    color: @base08;
+  }
+  .number,
+  .preprocessor,
+  .built_in,
+  .literal,
+  .params,
+  .constant{
+    color: @base09;
+  }
+  .class,
+  &.ruby .class .title,
+  &.css .rules .attribute{
+    color: @base0A;
+  }
+  .string,
+  .value,
+  .inheritance,
+  .header,
+  &.ruby .symbol,
+  &.xml .cdata{
+    color: @base0B;
+  }
+  &.css .hexcolor {
+    color: @base0C
+  }
+  .function,
+  &.python .decorator,
+  &.python .title,
+  &.ruby .function .title,
+  &.ruby .title .keyword,
+  &.perl .sub,
+  &.javascript .title,
+  &.coffeescript .title{
+    color: @base0D;
+  }
+  .keyword,
+  &.javascript .function{
+    color: @base0E;
+  }
+}
+.article-entry {
+  code {
+    background: @base01;
+    color: @base07;
+    padding: 0 0.3em;
+  }
+  pre {
+    .code-block();
+    code {
+      background: none;
+      text-shadow: none;
+      padding: 0;
+    }
+  }
+  .highlight {
+    .code-block();
+    .pre();
+    pre {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+    table {
+      margin: 0;
+      width: auto;
+    }
+    td {
+      border: none;
+      padding: 0;
+    }
+    figcaption {
+      .clearfix();
+      font-size: 0.85em;
+      color: @base03;
+      line-height: 1em;
+      margin-bottom: 1em;
+      a {
+        float: right;
+      }
+    }
+    .gutter pre {
+      .line-number();
+      text-align: right;
+      padding-right: 20px;
+    }
+    .line {
+      height: @line-height-computed;
+      &.marked {
+        background: @base02;
+      }
+    }
+  }
+  .gist {
+    margin: 0 @article-padding * -1;
+    border-style: solid;
+    border-color: @base03;
+    border-width: 1px 0;
+    background: @base01;
+    padding: 15px @article-padding 15px 0;
+    .gist-file {
+      border: none;
+      margin: 0;
+      .gist-data {
+        background: none;
+        border: none;
+        .line-numbers {
+          .line-number();
+          background: none;
+          border: none;
+          padding: 0 20px 0 0;
+        }
+        .line-data {
+          padding: 0 !important;
+        }
+      }
+      .highlight {
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+      .gist-meta {
+        background: @base01;
+        color: @base03;
+        font: 0.85em @font-family-sans-serif;
+        text-shadow: 0 0;
+        padding: 0;
+        margin-top: 1em;
+        margin-left: @article-padding;
+        a {
+          color: @base08;
+          font-weight: normal;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+}

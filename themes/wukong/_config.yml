@@ -1,0 +1,41 @@
+# Header
+# Top level menu
+menu:
+  home: /
+  archives: /archives
+rss: /atom.xml
+
+# Content
+date_format: MM/DD/YYYY
+excerpt_link: 全文
+fancybox: true
+
+# Sidebar
+sidebar: right
+widgets:
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
+
+# display widgets at the bottom of index pages (pagination == 2)
+index_widgets:
+# - category
+# - tagcloud
+# - archive
+
+# widget behavior
+archive_type: 'monthly'
+show_count: false
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+github_profile: https://github.com/jemmyzheng
+#symbol icon
+iconfont: //at.alicdn.com/t/font_qkel9yk84bihpvi.js

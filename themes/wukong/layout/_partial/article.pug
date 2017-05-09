@@ -5,15 +5,22 @@
   attr.itemscope = true;
   attr.itemprop = 'blogPost';
 article&attributes(attr)
-  div.article-meta
+  include mixins
+  div.article-meta.clearfix
+    +postDate('article-date', theme.date_format)
+    +categories()
   div.article-inner
     div.article-header
+      if post.cover
+        img(class='article-cover', src=url_for(post.cover))/
+      +postTitle('article-title')
     div(itemprop='articleBody').article-entry
-      if post.excerpt && excerpt
-        h1 #{post.title}
-        p !{post.excerpt}
-        p.article-more-link
-          a(href=url_for(post.path)+'#more') #{theme.excerpt_link || 'Read more'}
+      if excerpt
+        if post.excerpt
+          p !{post.excerpt}
+          p.article-more-link
+            a(href=url_for(post.path)+'#more') #{theme.excerpt_link || 'Read more'}
       else
         | !{post.content}
-    div.article-footer
+    div.article-footer.clearfix
+      +tags()

@@ -1,0 +1,55 @@
+@import "parameter";
+.archives {
+  width: @screen-lg;
+  margin: 0 auto;
+  ul.archive-list {
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+    &>li {
+      a {
+        &:hover {
+          text-decoration: underline @eyebrow;
+        }
+      }
+      span.archive-list-count {
+        display: inline-block;
+        width: 30%;
+        margin-left: 20px;
+        position: relative;
+        text-align: right;
+        &::before {
+          content: ' ';
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 1px;
+          width: 100%;
+          background: linear-gradient(to right, @end, @main, @end);
+        }
+      }
+      &+li {
+        margin-top: 10px;
+      }
+    }
+  }
+  .archive-list-info,
+  .archive-list-month {
+    width: @article-width / 2;
+    margin: 0 auto;
+  }
+  .archive-list-info {
+    margin-bottom: 20px;
+  }
+  .archive-btn-group {
+    margin-top: 50px;
+    text-align: center;
+    a {
+      font-size: @font-size-small;
+      &:hover {
+        text-decoration: underline @eyebrow;
+      }
+    }
+  }
+}

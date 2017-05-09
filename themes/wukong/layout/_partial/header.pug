@@ -1,0 +1,6 @@
+header
+  nav
+    include mixins
+    +createMenu(theme.menu || { home: '/' })
+    a(href=theme.github_profile, target='_blank')
+      +icon('github')
